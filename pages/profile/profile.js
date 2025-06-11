@@ -1,66 +1,34 @@
-// pages/profile/profile.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    userInfo: {},
+    userTags: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  onLoad() {
+    // 获取微信用户信息
+    const userInfo = wx.getStorageSync('userInfo') || {};
+    // 获取已选标签
+    const userTags = wx.getStorageSync('userTags') || [];
+    this.setData({ userInfo, userTags });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  onGoFav() {
+    wx.showToast({ title: '我的收藏功能待开发', icon: 'none' });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  onGoComment() {
+    wx.showToast({ title: '我的评论功能待开发', icon: 'none' });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
+  onGoSetting() {
+    wx.showToast({ title: '设置功能待开发', icon: 'none' });
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  onLogout() {
+    wx.showModal({
+      title: '确认退出',
+      content: '确定要退出登录并清除所有数据吗？',
+      success: (res) => {
+        if (res.confirm) {
+          wx.clearStorageSync();
+          wx.reLaunch({ url: '/pages/logs/logs' });
+        }
+      }
+    });
   }
-})
+});
