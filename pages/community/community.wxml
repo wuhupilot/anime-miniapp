@@ -1,24 +1,47 @@
-<view class="container">
-  <view class="header">
-    <text>社区</text>
-    <button class="search-btn"></button>
-  </view>
-  <view class="user-info">
-    <view class="avatar"></view>
-    <text>用户名</text>
-    <text>X小时琴琴</text>
-  </view>
-  <view class="post-list">
-    <view class="post">
-      <view class="post-cover"></view>
-      <view class="post-info">
-        <text>标题</text>
-        <view class="actions">
-          <text>❤️ 0</text>
-          <text>💬 0</text>
+<view class="rank-list-container">
+  <block wx:for="{{rankList}}" wx:key="id">
+    <view class="rank-item">
+      <!-- 左侧序号和热度 -->
+      <view class="rank-left">
+        <text class="rank-num {{index < 3 ? 'top' : ''}}">{{index + 1}}</text>
+        <text class="rank-hot">
+          <image class="hot-icon" src="/images/hot.png" />{{item.hot}}
+        </text>
+        <text class="rank-new" wx:if="{{item.isNew}}">NEW!</text>
+      </view>
+      <!-- 封面和内容 -->
+      <image class="cover" src="{{item.cover}}" />
+      <view class="rank-main">
+        <view class="rank-title-row">
+          <text class="rank-title">{{item.title}}</text>
+          <text class="rank-tag" wx:if="{{item.topTag}}">{{item.topTag}}</text>
+        </view>
+        <view class="rank-score-row">
+          <block wx:if="{{item.score}}">
+            <image wx:for="{{[2,4,6,8,10]}}" wx:for-item="star" wx:key="star" class="star" src="{{item.score >= star ? '/images/star-on.png' : (item.score >= star-1 ? '/images/star-half.png' : '/images/star-off.png')}}" />
+            <text class="score">{{item.score}}</text>
+          </block>
+          <block wx:else>
+            <text class="no-score">暂无评分</text>
+          </block>
+        </view>
+        <view class="rank-info">
+          <text class="type">{{item.type}}</text>
+          <text class="year">{{item.year}}</text>
+          <text class="tags">{{item.tags}}</text>
+        </view>
+        <view class="rank-desc" wx:if="{{item.desc}}">{{item.desc}}</view>
+        <view class="rank-hashtags" wx:if="{{item.hashtags}}">
+          <block wx:for="{{item.hashtags}}" wx:key="tag">
+            <text class="hashtag">#{{item}}</text>
+          </block>
         </view>
       </view>
+      <!-- 右侧想看 -->
+      <view class="want-btn" bindtap="onWant" data-index="{{index}}">
+        <image class="want-icon" src="{{item.want ? '/images/want-on.png' : '/images/want-off.png'}}" />
+        <text class="want-text">{{item.want ? '已想看' : '想看'}}</text>
+      </view>
     </view>
-    <!-- 更多帖子 -->
-  </view>
+  </block>
 </view>

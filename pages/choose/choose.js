@@ -139,6 +139,7 @@ Page({
     // 可将已选标签上传或存储
     const selected = [];
     this.data.groups.forEach(g => g.tags.forEach(t => { if (t.selected) selected.push(t.name); }));
+    wx.setStorageSync('userTags', selected); // 保存到本地
     wx.showToast({ title: `已选${selected.length}个`, icon: 'success' });
     // 跳转首页或其它页面
     setTimeout(() => {
