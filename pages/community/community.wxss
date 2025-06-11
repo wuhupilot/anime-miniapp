@@ -1,0 +1,9 @@
+.container { padding: 20rpx; }
+.header { display: flex; justify-content: space-between; align-items: center; }
+.user-info { display: flex; align-items: center; margin: 20rpx 0; }
+.avatar { width: 60rpx; height: 60rpx; background: #eee; border-radius: 50%; }
+.post-list { }
+.post { display: flex; margin-bottom: 20rpx; }
+.post-cover { width: 80rpx; height: 80rpx; background: #eee; border-radius: 10rpx; }
+.post-info { margin-left: 20rpx; }
+.actions { display: flex; gap: 20rpx; }

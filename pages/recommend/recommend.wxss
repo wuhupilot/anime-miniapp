@@ -1,0 +1,8 @@
+.container { padding: 20rpx; }
+.tabs { display: flex; justify-content: space-between; margin-bottom: 20rpx; }
+.recommend-list { }
+.recommend-item { display: flex; margin-bottom: 20rpx; }
+.cover { width: 80rpx; height: 100rpx; background: #eee; border-radius: 10rpx; }
+.info { margin-left: 20rpx; }
+.title { font-weight: bold; }
+.tag { background: #eee; border-radius: 20rpx; font-size: 20rpx; }

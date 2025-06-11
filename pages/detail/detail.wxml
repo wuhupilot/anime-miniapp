@@ -1,0 +1,124 @@
+<view class="container">
+  <!-- 动漫详情页面 -->
+  <view wx:if="{{type === 'anime'}}">
+    <view class="cover"></view>
+    <view class="title">动漫名称</view>
+    <view class="desc">内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介。</view>
+    <view class="info-list">
+      <view class="info-item">脚本羽寒</view>
+      <view class="info-item">集2集</view>
+      <view class="info-item">独2版</view>
+    </view>
+    <view class="recommend">
+      <text>倾佳推荐</text>
+      <!-- 推荐内容 -->
+    </view>
+  </view>
+
+  <!-- 用户协议页面 -->
+  <view wx:if="{{type === 'userAgreement'}}" class="agreement-container">
+    <view class="agreement-title">用户协议</view>
+    <scroll-view class="agreement-content" scroll-y="true">
+      <view class="agreement-section">
+        <view class="section-title">1. 服务条款</view>
+        <view class="section-content">
+          欢迎使用二次元推荐小程序！本应用是一个提供动漫推荐、排行榜和社区交流的平台。
+        </view>
+      </view>
+      
+      <view class="agreement-section">
+        <view class="section-title">2. 用户责任</view>
+        <view class="section-content">
+          • 用户应遵守中华人民共和国相关法律法规<br/>
+          • 不得利用本应用进行任何违法活动<br/>
+          • 不得发布色情、暴力、政治敏感等不当内容<br/>
+          • 尊重其他用户的权利和隐私
+        </view>
+      </view>
+      
+      <view class="agreement-section">
+        <view class="section-title">3. 知识产权</view>
+        <view class="section-content">
+          • 本应用的所有内容均受知识产权保护<br/>
+          • 用户不得未经授权复制、传播应用内容<br/>
+          • 用户上传的内容应确保拥有相应权利
+        </view>
+      </view>
+      
+      <view class="agreement-section">
+        <view class="section-title">4. 免责声明</view>
+        <view class="section-content">
+          • 本应用仅提供信息展示和推荐服务<br/>
+          • 不承担因用户使用而产生的任何损失<br/>
+          • 保留随时修改服务内容的权利
+        </view>
+      </view>
+      
+      <view class="agreement-section">
+        <view class="section-title">5. 联系方式</view>
+        <view class="section-content">
+          如有任何问题或建议，请联系我们：<br/>
+          邮箱：support@anime-recommend.com<br/>
+          客服时间：周一至周五 9:00-18:00
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 隐私政策页面 -->
+  <view wx:if="{{type === 'privacyPolicy'}}" class="agreement-container">
+    <view class="agreement-title">隐私政策</view>
+    <scroll-view class="agreement-content" scroll-y="true">
+      <view class="agreement-section">
+        <view class="section-title">1. 信息收集</view>
+        <view class="section-content">
+          我们收集的信息包括：<br/>
+          • 微信授权的基本用户信息（头像、昵称）<br/>
+          • 应用使用数据（浏览记录、收藏等）<br/>
+          • 设备信息（设备型号、操作系统版本）
+        </view>
+      </view>
+      
+      <view class="agreement-section">
+        <view class="section-title">2. 信息使用</view>
+        <view class="section-content">
+          我们使用收集的信息用于：<br/>
+          • 提供个性化推荐服务<br/>
+          • 改善用户体验<br/>
+          • 发送重要通知<br/>
+          • 防止欺诈和滥用
+        </view>
+      </view>
+      
+      <view class="agreement-section">
+        <view class="section-title">3. 信息保护</view>
+        <view class="section-content">
+          • 我们采用行业标准的安全措施保护您的信息<br/>
+          • 您的个人信息将被加密存储<br/>
+          • 我们不会向第三方出售或出租您的个人信息<br/>
+          • 仅在必要时与授权合作伙伴共享信息
+        </view>
+      </view>
+      
+      <view class="agreement-section">
+        <view class="section-title">4. 用户权利</view>
+        <view class="section-content">
+          您有权：<br/>
+          • 查看和修改您的个人信息<br/>
+          • 删除您的账户和相关数据<br/>
+          • 撤回对信息收集的同意<br/>
+          • 投诉不当的信息处理行为
+        </view>
+      </view>
+      
+      <view class="agreement-section">
+        <view class="section-title">5. 政策更新</view>
+        <view class="section-content">
+          • 我们可能会更新本隐私政策<br/>
+          • 重大变更会通过应用内通知告知用户<br/>
+          • 继续使用应用即表示同意更新后的政策
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

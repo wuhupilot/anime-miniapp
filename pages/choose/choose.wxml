@@ -1,0 +1,33 @@
+<!--pages/choose/choose.wxml-->
+<view class="choose-container">
+  <!-- 顶部欢迎语和跳过 -->
+  <view class="choose-header">
+    <view class="choose-title">好久不见，欢迎回来</view>
+    <view class="choose-desc">选择兴趣可以获得更精准的内容推荐</view>
+    <text class="choose-skip" bindtap="onSkip">跳过</text>
+  </view>
+
+  <!-- 标签分组 -->
+  <scroll-view scroll-y class="choose-scroll">
+    <block wx:for="{{groups}}" wx:for-index="groupIdx" wx:for-item="group">
+      <view class="group-block">
+        <view class="group-title">{{group.title}}</view>
+        <view class="tag-list">
+          <block wx:for="{{group.tags}}" wx:for-index="tagIdx" wx:for-item="tag">
+            <view class="tag-item {{tag.selected ? 'tag-selected' : ''}}" bindtap="onTagTap" data-group="{{groupIdx}}" data-tag="{{tagIdx}}">
+              <image wx:if="{{tag.icon}}" class="tag-icon" src="{{tag.icon}}" />
+              <text>{{tag.name}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+
+  <!-- 底部按钮 -->
+  <view class="choose-footer">
+    <button class="choose-btn" bindtap="onSubmit" disabled="{{selectedCount === 0}}">
+      我选好了（已选{{selectedCount}}个）
+    </button>
+  </view>
+</view>

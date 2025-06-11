@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "动漫推荐",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#f8f8f8",
+  "usingComponents": {}
+}

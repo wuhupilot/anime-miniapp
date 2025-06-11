@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="header">
+    <text>社区</text>
+    <button class="search-btn"></button>
+  </view>
+  <view class="user-info">
+    <view class="avatar"></view>
+    <text>用户名</text>
+    <text>X小时琴琴</text>
+  </view>
+  <view class="post-list">
+    <view class="post">
+      <view class="post-cover"></view>
+      <view class="post-info">
+        <text>标题</text>
+        <view class="actions">
+          <text>❤️ 0</text>
+          <text>💬 0</text>
+        </view>
+      </view>
+    </view>
+    <!-- 更多帖子 -->
+  </view>
+</view>

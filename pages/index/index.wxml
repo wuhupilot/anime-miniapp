@@ -1,0 +1,63 @@
+<view class="main-container">
+  <!-- 顶部搜索框 -->
+  <view class="search-bar">
+    <icon type="search" size="18" class="search-icon" />
+    <input class="search-input" placeholder="搜索动漫/电影" bindinput="onSearchInput" value="{{searchText}}" />
+  </view>
+
+  <!-- 顶部功能按钮区 -->
+  <view class="top-actions">
+    <view class="action-item" wx:for="{{actions}}" wx:key="name" bindtap="onActionTap" data-index="{{index}}">
+      <image class="action-icon" src="{{item.icon}}" />
+      <text class="action-text">{{item.name}}</text>
+    </view>
+  </view>
+
+  <!-- Tab切换区 -->
+  <view class="tab-bar">
+    <view class="tab-item {{activeTab === 0 ? 'tab-active' : ''}}" bindtap="onTabChange" data-index="0">影院热映</view>
+  
+    <view class="tab-more" bindtap="onMoreTap" data-type="{{activeTab === 0 ? 'hot' : 'douban'}}">
+      全部 <text class="arrow">></text>
+    </view>
+  </view>
+
+  <!-- 横向电影卡片区 -->
+  <scroll-view scroll-x class="movie-scroll">
+    <view class="movie-list">
+      <block wx:for="{{movieList}}" wx:key="id">
+        <view class="movie-card">
+          <image class="movie-cover" src="{{item.cover}}" />
+          <image class="fav-icon" src="{{item.fav ? '/images/fav-on.png' : '/images/fav-off.png'}}" bindtap="onToggleFav" data-index="{{index}}" />
+          <view class="movie-title">{{item.title}}</view>
+          <view class="movie-rating">
+            <block wx:for="{{[1,2,3,4,5]}}" wx:for-item="star" wx:key="star">
+              <image class="star" src="{{item.rating >= star ? '/images/star-on.png' : (item.rating >= star-0.5 ? '/images/star-half.png' : '/images/star-off.png')}}" />
+            </block>
+            <text class="score" wx:if="{{item.score}}">{{item.score}}</text>
+            <text class="score" wx:else>暂无评分</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <!-- 下方推荐卡片区 -->
+  <view class="recommend-row">
+    <block wx:for="{{recommendList}}" wx:key="title">
+      <view class="recommend-card">
+        <view class="recommend-title">
+          <view class="recommend-left">
+          {{item.title}}
+        </view>
+        <view class="recommend-right">
+            <text class="arrow" bindtap="onRecommendMoreTap" data-type="{{item.type}}">></text>
+        </view>
+
+        </view>
+        <view class="recommend-desc">{{item.desc}}</view>
+        <image class="recommend-img" src="{{item.img}}" />
+      </view>
+    </block>
+  </view>
+</view>

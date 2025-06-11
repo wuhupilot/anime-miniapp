@@ -1,0 +1,12 @@
+<!--logs.wxml-->
+<view class="login-container">
+  <view class="login-title">欢迎登录动漫推荐</view>
+  <button class="login-btn" type="primary" open-type="getUserInfo" bindtap="onLogin">微信一键登录</button>
+  <view class="agreement-row">
+    <checkbox class="agreement-checkbox" checked="{{agreed}}" bindtap="onToggleAgree" />
+    <text class="agreement-text">我已阅读并同意</text>
+    <text class="agreement-link" bindtap="showUserAgreement">《用户协议》</text>
+    <text class="agreement-text">和</text>
+    <text class="agreement-link" bindtap="showPrivacyPolicy">《隐私政策》</text>
+  </view>
+</view>

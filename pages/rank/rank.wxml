@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="search-bar">
+    <input placeholder="搜索"/>
+  </view>
+  <view class="filter">
+    <text>风格</text>
+    <button>治愈</button>
+    <button>热血</button>
+    <button>搞笑</button>
+    <button>新番</button>
+  </view>
+  <view class="filter">
+    <text>类型</text>
+    <button>动画</button>
+    <button>漫画</button>
+    <button>游戏</button>
+    <button>同人</button>
+  </view>
+  <view class="item-list">
+    <view class="item">
+      <view class="cover"></view>
+      <view class="info">
+        <text class="title">动漫名称</text>
+        <text class="desc">再见再见 再加</text>
+        <text class="score">9.0</text>
+        <button class="tag">收藏</button>
+      </view>
+    </view>
+    <!-- 可循环渲染更多item -->
+  </view>
+  <view class="tabbar">
+    <button>首页</button>
+    <button>榜单</button>
+    <button>社区</button>
+    <button>我的</button>
+  </view>
+</view>

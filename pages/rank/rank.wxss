@@ -1,0 +1,12 @@
+.container { padding: 20rpx; }
+.search-bar { margin-bottom: 20rpx; }
+.filter { margin-bottom: 10rpx; }
+.filter button { margin-right: 10rpx; }
+.item-list { margin-top: 20rpx; }
+.item { display: flex; margin-bottom: 20rpx; }
+.cover { width: 100rpx; height: 140rpx; background: #eee; border-radius: 10rpx; }
+.info { margin-left: 20rpx; }
+.title { font-weight: bold; }
+.score { color: #f90; }
+.tag { background: #eee; border-radius: 20rpx; font-size: 20rpx; }
+.tabbar { position: fixed; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-around; background: #fff; border-top: 1px solid #eee; }

@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="tabs">
+    <text>个性推荐</text>
+    <text>铺贴2期</text>
+    <text>同好推荐</text>
+    <text>宿舍</text>
+  </view>
+  <view class="recommend-list">
+    <view class="recommend-item">
+      <view class="cover"></view>
+      <view class="info">
+        <text class="title">动漫名称</text>
+        <text class="desc">相关描述</text>
+        <text class="tag">低压</text>
+      </view>
+    </view>
+    <!-- 更多推荐项 -->
+  </view>
+</view>
